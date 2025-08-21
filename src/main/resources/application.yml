@@ -40,7 +40,11 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    non-secure-port: ${server.port}
+    secure-port: 443
     hostname: ${EUREKA_HOST:localhost}
 
 management:
