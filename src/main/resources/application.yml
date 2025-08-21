@@ -23,20 +23,20 @@ spring:
               - PUT
               - DELETE
               - PATCH
-      routes:
-        - id: buscador-service
-          uri: lb://buscador-service
-          predicates:
-            - Path=/api/products/**, /api/suppliers/**
-        - id: operador-service
-          uri: lb://operador-service
-          predicates:
-            - Path=/api/supply-orders/**, /api/shipments/**, /api/auth/**
+      #routes:
+      #  - id: buscador-service
+      #    uri: lb://buscador-service
+      #    predicates:
+      #      - Path=/api/products/**, /api/suppliers/**
+      #  - id: operador-service
+      #    uri: lb://operador-service
+      #    predicates:
+      #      - Path=/api/supply-orders/**, /api/shipments/**, /api/auth/**
 
 eureka:
   client:
     service-url:
-      default-zone: ${EUREKA_URL:http://localhost:8761/eureka/}
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
     register-with-eureka: true
     fetch-registry: true
   instance:
